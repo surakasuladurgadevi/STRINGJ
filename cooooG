@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+#define MAX_SIZE 100 
+int main()
+{
+    char s[MAX_SIZE]; 
+    int i, len, vo, co;
+    printf("Enter any string: ");
+    gets(s);
+vo = 0;
+    co = 0;
+    len = strlen(s);
+
+    for(i=0; i<len; i++)
+    {
+        if((s[i]>='a' && s[i]<='z') || (s[i]>='A' && s[i]<='Z'))
+        {
+            switch(s[i])
+            {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                case 'A':
+                case 'E':
+                case 'I':
+                case 'O':
+                case 'U':
+                    vo++;
+                    break;
+                default:
+                    co++;
+            }
+        }
+    }
+
+    printf("Total number of vowel = %d\n", vo);
+    printf("Total number of consonant = %d\n", co);
+
+    return 0;
+}
